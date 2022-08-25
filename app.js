@@ -2,6 +2,7 @@
 // // simpleGit().clean(simpleGit.CleanOptions.FORCE);
 // // const git = simpleGit();
 const exec = require("child_process").exec;
+const axios = require("axios");
 
 // exec("git init", (e, stdout, stderr) => {
 //   if (e instanceof Error) {
@@ -12,18 +13,39 @@ const exec = require("child_process").exec;
 //   console.log("standard output", stdout);
 //   console.log("Standard error", stderr);
 // });
-// const axios = require("axios");
 
-exec("git add .", (e, stdout, stderr) => {
-  if (e instanceof Error) {
-    console.log(e);
-    throw e;
+// exec("git add ./index.html", (e, stdout, stderr) => {
+//   if (e instanceof Error) {
+//     console.log(e);
+//     throw e;
+//   }
+
+//   console.log("standard output", stdout);
+//   console.log("Standard error", stderr);
+// });
+
+// exec("git status", (e, stdout, stderr) => {
+//   if (e instanceof Error) {
+//     console.log(e);
+//     throw e;
+//   }
+
+//   console.log("standard output", stdout);
+//   console.log("Standard error", stderr);
+// });
+
+exec(
+  "git add remote new https://github.com/valorant-dhruv/testing",
+  (e, stdout, stderr) => {
+    if (e instanceof Error) {
+      console.log(e);
+      throw e;
+    }
+
+    console.log("standard output", stdout);
+    console.log("Standard error", stderr);
   }
-
-  console.log("standard output", stdout);
-  console.log("Standard error", stderr);
-});
-const axios = require("axios");
+);
 
 // const dotenv = require("dotenv").config();
 
