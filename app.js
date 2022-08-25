@@ -4,48 +4,51 @@
 const exec = require("child_process").exec;
 const axios = require("axios");
 
-// exec("git init", (e, stdout, stderr) => {
-//   if (e instanceof Error) {
-//     console.log(e);
-//     throw e;
-//   }
+let url = "https://github.com/valorant-dhruv/testing";
+let finalurl = "git remote add new2";
 
-//   console.log("standard output", stdout);
-//   console.log("Standard error", stderr);
-// });
+let message = "second commit";
+let messagefinal = `git commit -m ${`${message}`}`;
 
-// exec("git add ./index.html", (e, stdout, stderr) => {
-//   if (e instanceof Error) {
-//     console.log(e);
-//     throw e;
-//   }
-
-//   console.log("standard output", stdout);
-//   console.log("Standard error", stderr);
-// });
-
-// exec("git status", (e, stdout, stderr) => {
-//   if (e instanceof Error) {
-//     console.log(e);
-//     throw e;
-//   }
-
-//   console.log("standard output", stdout);
-//   console.log("Standard error", stderr);
-// });
-
-exec(
-  "git add remote new https://github.com/valorant-dhruv/testing",
-  (e, stdout, stderr) => {
-    if (e instanceof Error) {
-      console.log(e);
-      throw e;
-    }
-
-    console.log("standard output", stdout);
-    console.log("Standard error", stderr);
+exec("git init", (e, stdout, stderr) => {
+  if (e instanceof Error) {
+    console.log(e);
+    throw e;
   }
-);
+
+  console.log("standard output", stdout);
+  console.log("Standard error", stderr);
+});
+
+exec("git add .", (e, stdout, stderr) => {
+  if (e instanceof Error) {
+    console.log(e);
+    throw e;
+  }
+
+  console.log("standard output", stdout);
+  console.log("Standard error", stderr);
+});
+
+// exec(messagefinal, (e, stdout, stderr) => {
+//   if (e instanceof Error) {
+//     console.log(e);
+//     throw e;
+//   }
+
+//   console.log("standard output", stdout);
+//   console.log("Standard error", stderr);
+// });
+
+// exec(`${url}`, (e, stdout, stderr) => {
+//   if (e instanceof Error) {
+//     console.log(e);
+//     throw e;
+//   }
+
+//   console.log("standard output", stdout);
+//   console.log("Standard error", stderr);
+// });
 
 // const dotenv = require("dotenv").config();
 
